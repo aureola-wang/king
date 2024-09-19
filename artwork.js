@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateButtons();
         // 更新页面标题
         document.title = `图片 ${id - 396} - 王浩宸17岁生日快乐`;
+        // 重置倒计时
+        resetCountdown();
     }
 
     function updateButtons() {
@@ -45,3 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadImage(currentId);
     loadComments(currentId);
 });
+
+function resetCountdown() {
+    countdown = 30;
+    updateCountdown();
+}
