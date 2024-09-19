@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const artworkContainer = document.getElementById('artwork-container');
+    const artworkDescription = document.getElementById('artwork-description');
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
 
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadImage(id) {
         artworkContainer.innerHTML = `<img src="images/IMG_0${id}.jpeg" alt="图片 ${id}">`;
+        artworkDescription.textContent = `这是图片 ${id - 396} 的描述。这里可以添加更多关于图片的详细信息。`;
         updateButtons();
         // 更新页面标题
         document.title = `图片 ${id - 396} - 王浩宸17岁生日快乐`;
