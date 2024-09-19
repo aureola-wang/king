@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageList = [];
     for (let i = 397; i <= 427; i++) {
         imageList.push(`IMG_0${i}.jpeg`);
-        imageList.push(`IMG_0${i}.jpg`);
     }
 
     let swiper;
