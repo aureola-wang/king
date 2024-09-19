@@ -2,34 +2,33 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>祝贺王浩宸17岁生日快乐</title>
+    <title>王浩宸17岁生日快乐</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <h1>祝贺王浩宸17岁生日快乐</h1>
-    
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <!-- 动态加载的图片将在这里显示 -->
+    <div class="background-container">
+        <h1>王浩宸17岁生日快乐</h1>
+        
+        <!-- 其余内容保持不变 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- 动态加载的图片将在这里显示 -->
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-pagination"></div>
+
+        <div class="navigation-links">
+            <a href="#" id="prevLink" class="nav-link">上一页</a>
+            <a href="#" id="nextLink" class="nav-link">下一页</a>
+        </div>
+
+        <audio id="bgMusic" loop>
+            <source src="happy_birthday.mp3" type="audio/mpeg">
+            您的浏览器不支持音频元素。
+        </audio>
+        <button id="musicToggle">暂停/播放音乐</button>
     </div>
-
-    <!-- 添加导航链接 -->
-    <div class="navigation-links">
-        <a href="#" id="prevLink" class="nav-link">上一页</a>
-        <a href="#" id="nextLink" class="nav-link">下一页</a>
-    </div>
-
-    <!-- 添加音频元素 -->
-    <audio id="bgMusic" loop>
-        <source src="happy_birthday.mp3" type="audio/mpeg">
-        您的浏览器不支持音频元素。
-    </audio>
-
-    <!-- 添加音乐控制按钮 -->
-    <button id="musicToggle">暂停/播放音乐</button>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
