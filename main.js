@@ -58,17 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // 设置导航链接事件监听器
-        prevLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            swiper.slidePrev();
-        });
-
-        nextLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            swiper.slideNext();
-        });
-
         function updateNavigationLinks() {
             prevLink.href = `artwork.html?id=${getPrevId()}`;
             nextLink.href = `artwork.html?id=${getNextId()}`;
@@ -81,6 +70,17 @@ document.addEventListener('DOMContentLoaded', function() {
         function getNextId() {
             return currentIndex === validArtworks.length - 1 ? 1 : currentIndex + 2;
         }
+
+        // 设置导航链接事件监听器
+        prevLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = this.href;
+        });
+
+        nextLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = this.href;
+        });
 
         // 初始化导航链接
         updateNavigationLinks();
