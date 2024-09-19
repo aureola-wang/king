@@ -1,0 +1,15 @@
+/* 添加到现有的 CSS 中 */
+#musicToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#musicToggle:hover {
+    background-color: #e0e0e0;
+}
