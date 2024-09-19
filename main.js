@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let swiper;
     let currentIndex = 0;
 
+    // 设置导航链接
+    const prevLink = document.getElementById('prevLink');
+    const nextLink = document.getElementById('nextLink');
+
     // 动态生成艺术品数据并检查图片是否存在
     const artworksPromises = imageList.map((image, index) => 
         new Promise((resolve) => {
@@ -55,10 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // 设置导航链接
-        const prevLink = document.getElementById('prevLink');
-        const nextLink = document.getElementById('nextLink');
-
+        // 设置导航链接事件监听器
         prevLink.addEventListener('click', (e) => {
             e.preventDefault();
             swiper.slidePrev();
