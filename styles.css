@@ -4,14 +4,14 @@
     bottom: 20px;
     right: 20px;
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: rgba(240, 240, 240, 0.7);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #musicToggle:hover {
-    background-color: #e0e0e0;
+    background-color: rgba(224, 224, 224, 0.9);
 }
 
 /* 其他样式保持不变 */
@@ -55,7 +55,6 @@ html, body {
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
-    position: relative;
 }
 
 /* 确保内容不会溢出容器 */
@@ -67,7 +66,18 @@ html, body {
 
 /* 响应式调整 */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
     .background-container {
         padding: 10px;
     }
+}
+
+.content {
+    /* 为其他内容添加样式 */
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
 }
