@@ -2,12 +2,28 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>作品详情</title>
+    <title>图片详情</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="artwork-details"></div>
-    <div id="comments"></div>
+    <div class="background-container">
+        <h1>图片详情</h1>
+        <div id="artwork-container"></div>
+        <div class="navigation-buttons">
+            <a href="#" id="prevButton" class="nav-button">上一页</a>
+            <a href="index.html" class="nav-button">回到首页</a>
+            <a href="#" id="nextButton" class="nav-button">下一页</a>
+        </div>
+        <div id="comments-section">
+            <h2>访客留言</h2>
+            <div id="comments-list"></div>
+            <form id="comment-form">
+                <textarea id="comment-input" placeholder="请输入您的留言" required></textarea>
+                <button type="submit" class="nav-button">提交留言</button>
+            </form>
+        </div>
+    </div>
     <script src="artwork.js"></script>
+    <script src="comments.js"></script>
 </body>
 </html>

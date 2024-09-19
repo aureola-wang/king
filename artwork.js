@@ -1,23 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const artworkId = parseInt(urlParams.get('id'));
+    const artworkContainer = document.getElementById('artwork-container');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
 
-    // 生成图片列表
-    const imageList = [];
-    for (let i = 397; i <= 427; i++) {
-        imageList.push(`IMG_0${i}.jpeg`);
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentId = parseInt(urlParams.get('id')) || 397;
+
+    const minId = 397;
+    const maxId = 427;
+
+    function loadImage(id) {
+        artworkContainer.innerHTML = `<img src="images/IMG_0${id}.jpeg" alt="图片 ${id}">`;
+        updateButtons();
+        // 更新页面标题
+        document.title = `图片 ${id - 396} - 王浩宸17岁生日快乐`;
     }
 
-    const artwork = {
-        id: artworkId,
-        title: `作品${artworkId}`,
-        image: imageList[artworkId - 1],
-        description: `这是作品${artworkId}的描述`
-    };
+    function updateButtons() {
+        prevButton.style.display = currentId > minId ? 'inline-block' : 'none';
+        nextButton.style.display = currentId < maxId ? 'inline-block' : 'none';
+        
+        prevButton.href = `artwork.html?id=${currentId - 1}`;
+        nextButton.href = `artwork.html?id=${currentId + 1}`;
+    }
 
-    document.getElementById('artwork-details').innerHTML = `
-        <h2>${artwork.title}</h2>
-        <img src="../images/${artwork.image}" alt="${artwork.title}">
-        <p>${artwork.description}</p>
-    `;
+    prevButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (currentId > minId) {
+            currentId--;
+            loadImage(currentId);
+            loadComments(currentId);
+        }
+    });
+
+    nextButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (currentId < maxId) {
+            currentId++;
+            loadImage(currentId);
+            loadComments(currentId);
+        }
+    });
+
+    loadImage(currentId);
+    loadComments(currentId);
 });
