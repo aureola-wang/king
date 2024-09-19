@@ -38,23 +38,108 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    width: 100%;
 }
 
 .background-container {
-    background-image: url('images/mail.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 20px;
     box-sizing: border-box;
+}
+
+#artwork-container {
+    width: 100%;
+    max-width: 90vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#artwork-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: auto;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    background-color: rgba(139, 69, 19, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: rgba(139, 69, 19, 0.9);
+}
+
+#comments-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#comments-list {
+    margin-bottom: 20px;
+}
+
+.comment {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#comment-form button {
+    align-self: flex-start;
+}
+
+#countdown {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .navigation-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* 确保内容不会溢出容器 */
