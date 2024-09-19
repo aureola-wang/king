@@ -86,19 +86,43 @@ document.addEventListener('DOMContentLoaded', function() {
         updateNavigationLinks();
     });
 
-    // 音乐控制代码保持不变
+    // 音乐控制代码
     const bgMusic = document.getElementById('bgMusic');
     const musicToggle = document.getElementById('musicToggle');
 
-    bgMusic.play().catch(error => {
-        console.log('自动播放失败。用户可能需要手动开始播放。');
+    // 尝试自动播放
+    function attemptPlay() {
+        bgMusic.play().then(() => {
+            console.log('自动播放成功');
+        }).catch(error => {
+            console.log('自动播放失败，等待用户交互');
+        });
+    }
+
+    // 页面加载时尝试播放
+    attemptPlay();
+
+    // 监听页面可见性变化
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            attemptPlay();
+        }
     });
 
+    // 监听用户首次点击事件
+    document.addEventListener('click', function onFirstClick() {
+        attemptPlay();
+        document.removeEventListener('click', onFirstClick);
+    }, { once: true });
+
+    musicToggle.textContent = '暂停音乐';
     musicToggle.addEventListener('click', function() {
         if (bgMusic.paused) {
             bgMusic.play();
+            musicToggle.textContent = '暂停音乐';
         } else {
             bgMusic.pause();
+            musicToggle.textContent = '播放音乐';
         }
     });
 });
