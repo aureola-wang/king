@@ -35,6 +35,16 @@ h1 {
 /* 其他样式保持不变 */
 
 .background-container {
-    position: relative; /* 添加相对定位 */
-    /* 其他现有样式保持不变 */
+    background-image: url('images/mail.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
 }

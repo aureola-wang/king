@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 description: `这是作品${index + 1}的描述`
             });
             img.onerror = () => resolve(null);
-            img.src = `../images/${image}`;
+            img.src = `images/${image}`;
         })
     );
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const slide = document.createElement('div');
             slide.className = 'swiper-slide';
             slide.innerHTML = `
-                <img src="../images/${artwork.image}" alt="${artwork.title}">
+                <img src="images/${artwork.image}" alt="${artwork.title}">
                 <h3>${artwork.title}</h3>
                 <a href="artwork.html?id=${artwork.id}">查看详情</a>
             `;
