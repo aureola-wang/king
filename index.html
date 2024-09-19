@@ -8,26 +8,20 @@
 </head>
 <body>
     <div class="background-container">
-        <h1>王浩宸17岁生日快乐</h1>
-        
         <div class="content">
-            <!-- 这里可以添加其他静态内容 -->
+            <h1>王浩宸17岁生日快乐</h1>
+            <div class="navigation-buttons">
+                <a href="gallery.html" class="nav-button">查看所有图片</a>
+                <a href="artwork.html?id=397" class="nav-button" id="nextImageLink">查看下一张</a>
+            </div>
         </div>
-
-        <div class="navigation-buttons">
-            <a href="gallery.html" class="nav-button">查看所有图片</a>
-            <a href="artwork.html?id=397" class="nav-button" id="nextImageLink">查看下一张</a>
-        </div>
-
         <div id="countdown">30</div>
-
         <audio id="bgMusic" loop autoplay>
             <source src="happy_birthday.mp3" type="audio/mpeg">
             您的浏览器不支持音频元素。
         </audio>
         <button id="musicToggle">暂停音乐</button>
     </div>
-
     <script src="main.js"></script>
     <script src="autoSlide.js"></script>
 </body>

@@ -41,10 +41,15 @@ html, body {
 }
 
 .background-container {
+    background-image: url('images/mail.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     box-sizing: border-box;
 }
