@@ -14,17 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     attemptPlay();
 
-    document.addEventListener('visibilitychange', function() {
-        if (!document.hidden) {
-            attemptPlay();
-        }
-    });
-
-    document.addEventListener('click', function onFirstClick() {
-        attemptPlay();
-        document.removeEventListener('click', onFirstClick);
-    }, { once: true });
-
     musicToggle.addEventListener('click', function() {
         if (bgMusic.paused) {
             bgMusic.play();
