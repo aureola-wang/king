@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "作品1",
+    "image": "image1.jpg",
+    "description": "这是作品1的描述"
+  },
+  {
+    "id": 2,
+    "title": "作品2",
+    "image": "image2.jpg",
+    "description": "这是作品2的描述"
+  }
+]
